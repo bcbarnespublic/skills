@@ -1,6 +1,6 @@
 ---
 name: boilerplan
-description: Prepare an implementation plan for a task the user describes, keeping docs and comments current, asking clarifying questions freely, and ending the plan with a git commit. Use only when the user explicitly invokes boilerplan or asks to "boilerplan" a task.
+description: Prepare an implementation plan for a task the user describes, including docs and comment updates, clarifying questions as needed, and a final step to commit the implemented changes. Use only when the user explicitly invokes boilerplan or asks to "boilerplan" a task.
 ---
 
 Prepare an implementation plan for the task the user has described. The task may
@@ -13,6 +13,6 @@ While preparing the plan:
   updates the change requires as explicit steps in the plan, not an afterthought.
 - **Ask questions as needed, as often as needed, whenever needed.** When unsure
   about a decision or the user's intent, ask rather than guess.
-- **End the plan with a git commit.** The final step is committing the work.
+- **Make committing the implemented changes the final step of the proposed plan.**
 - **Present the plan when ready.** Do not start implementing until the user has
   seen and accepted it.

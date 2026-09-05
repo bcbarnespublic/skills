@@ -34,7 +34,7 @@ Examine the real state of the work, not the assistant's summary of it. Treat "th
 2. `git diff` (and `git diff --staged`) for uncommitted changes; `git log` and `git show` for any commits made during the execution.
 3. Examine each changed file. For text artifacts, read enough surrounding context to judge whether the change actually accomplishes what the plan asked for — not just whether lines were edited. For media or binary artifacts, inspect them directly using available read-only methods (view the image, check the file's properties, etc.).
 4. If new files were created, examine them. If files were deleted, confirm the deletion was intended.
-5. If the plan involved running something (a migration, a script, a test suite), look for evidence in the conversation that it ran and that it succeeded. Absence of evidence is itself a finding worth reporting.
+5. If the plan involved running something (a migration, a script, a test suite), look for evidence in the conversation that it ran and that it succeeded. If that evidence is unavailable, classify the item as Unverified.
 
 If the project is not a git repo, identify which files to examine from artifact-producing tool/action or command records, such as file modification operations, shell commands, uploads, exports, or generated artifact paths. If neither git history nor available conversation/tool records identify the artifact set, ask the user for the changed paths; only report that the changed artifact set cannot be bounded if the paths cannot be obtained. Still verify each file's contents independently — do not substitute the assistant's narrative summary for inspecting the artifacts. Note in the report that no git history was available.
 
@@ -46,7 +46,8 @@ For every plan item, classify:
 
 - **Done** — the artifact matches the plan's intent. Cite evidence.
 - **Partial** — some of the item is reflected, but not all. Describe what is there and what is still missing.
-- **Missing** — no evidence of the change in the artifacts. Offer a best guess at *why* (skipped, blocked by another issue, deferred, forgotten) based on what is visible in the conversation and code. If you cannot tell, say so.
+- **Missing** — inspection establishes that the required change is absent from the relevant artifacts. Offer a best guess at *why* (skipped, blocked by another issue, deferred, forgotten) based on what is visible in the conversation and code. If you cannot tell, say so.
+- **Unverified** — available evidence cannot establish whether the item was completed. State what evidence is unavailable; do not treat uncertainty as an implementation failure.
 
 For every change in the diff, classify:
 
@@ -68,10 +69,10 @@ Use this exact structure, in this order:
 - [item] — evidence at `path:line`
 - ...
 
-## Missing or partial
-- [item] — what is missing and, if knowable, why
+## Missing, partial, or unverified
+- [item] — classification, what is missing or cannot be verified and, if knowable, why
 - ...
-- (If none: "Nothing missing.")
+- (If none: "Nothing missing, partial, or unverified.")
 
 ## Outside the plan
 - `path:line` — one-line description of the change
@@ -79,13 +80,13 @@ Use this exact structure, in this order:
 - (If none: "No out-of-scope changes.")
 
 ## Verdict
-One sentence: clean execution, minor gaps, or significant gaps.
+One sentence: clean execution, minor gaps, significant gaps, or inconclusive; mention unverified items when present, including alongside confirmed gaps.
 ```
 
-If there are no gaps and no out-of-scope changes, say so plainly. Do not manufacture concerns to look thorough — a clean report is a valid result and is more useful than padding.
+If all items are verified as Done and there are no out-of-scope changes, say so plainly. Do not manufacture concerns to look thorough — a clean report is a valid result and is more useful than padding.
 
 ## Boundaries
 
 - Read-only. Do not fix anything you find; the user decides what to do next.
-- Do not run tests, builds, or anything with side effects unless the user explicitly asks. If the plan called for running tests and you cannot tell whether they ran, report that as a gap rather than running them yourself.
+- Do not run tests, builds, or anything with side effects unless the user explicitly asks. If the plan called for running tests and you cannot tell whether they ran, classify that item as Unverified rather than running them yourself.
 - If something cannot be verified by inspecting the artifacts (e.g., the plan involved an external API call, a manual step, a deploy, or subjective quality of generated media), state plainly that it could not be verified rather than guessing.

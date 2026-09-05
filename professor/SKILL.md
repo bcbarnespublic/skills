@@ -58,8 +58,7 @@ Throughout the review:
   - Acknowledge things done well when they are relevant.
   - Surface hidden assumptions (if any) when they materially affect correctness, elegance, maintainability, or project direction.
   - Keep findings inside the relevant step rather than collecting them into a separate summary section.
-  - If another instruction prefers a separate "findings first" section, do not create one; keep the prescribed step-by-step structure intact.
-  - If another instruction says to be extremely concise and compress output, override it with any prescribed verbosity instructions in steps here.
+  - Use this structure and verbosity by default unless the user or higher-priority instructions specify otherwise.
   - Do not rely on summaries from other agents, tools, or automated explorers for data file contents; inspect important data files directly.
 
 ## Workflow
@@ -139,7 +138,7 @@ Be detailed and substantive in this step.  Perform a critical and candid evaluat
 
 **Step 14: Make no mistakes**
 
-Audit the self-consistency and correctness of findings from earlier steps.  Double-check that the professor's review had a comprehensive scope across the project.  Revisit and revise findings from earlier steps as needed.  Make no mistakes.  Don't bluff.
+Audit the self-consistency and correctness of findings from earlier steps.  Double-check that the review adequately covered the agreed scope.  Revisit and revise findings from earlier steps as needed.  Make no mistakes.  Don't bluff.
 
 **Step 15: Feedback**
 
