@@ -1,6 +1,16 @@
 # Skills
 
-Four agent skills using the portable `SKILL.md` format for agent harnesses, including OpenAI Codex, Pi coding agent, Claude Code, Google Antigravity, tau, and OpenCode. Each skill lives in its own directory as a `SKILL.md` file, ready to copy into a harness's skills location.
+Agent skills for planning, reviewing, and verifying project work, using the portable `SKILL.md` format. Each skill lives in its own directory, ready to copy into a harness's skills location.
+
+## Using skills together
+
+Use the skills individually or combine them as the work calls for it. For example:
+
+- **Review, plan, verify:** Use `/professor` to review a project, then `/boilerplan` to plan fixes for the findings you want to address. After accepting and implementing the plan, use `/trust-but-verify` to check that everything landed.
+- **Check work as you go:** Use `/deslop` after a chunk of work or when taking over someone else's—or another agent's—codebase to find stale assumptions, unnecessary complexity, and weak verification.
+- **Plan with review standards in mind:** Start with an idea and tell `/boilerplan`: “This work will eventually be evaluated by `/professor` or `/deslop`. Read those skills and account for their review standards in the plan.”
+
+These are examples, not a required sequence. The slash notation names the skills; invocation syntax depends on your harness.
 
 ## Compatibility
 
@@ -8,25 +18,31 @@ This repository owns the skill definitions only. Harness-specific installation i
 
 ## [boilerplan](boilerplan/SKILL.md)
 
-`boilerplan` turns a described task into an implementation plan, carrying the standing instructions that would otherwise be retyped every time: keep docs and code comments current, ask clarifying questions freely rather than guessing, end the plan with a git commit, and present the plan before implementing anything.
+`boilerplan` turns a described task into an implementation plan: keep docs and code comments current, ask clarifying questions as needed, and make a git commit the final implementation step. The agent presents the plan and waits for acceptance before implementing it.
 
 Used in place of restating the same planning boilerplate at the end of every request.
 
+## [deslop](deslop/SKILL.md)
+
+`deslop` reviews code and project material for stale assumptions, unnecessary complexity, duplicate concepts, and weak verification. It prioritizes recommendations backed by evidence and is read-only unless you request remediation.
+
+Used after chunks of work or when taking over an unfamiliar codebase, regardless of who or what wrote it.
+
 ## [docpass](docpass/SKILL.md)
 
-`docpass` audits all project documentation against the underlying codebase implementation, treating the code as the ground truth. It inventories Markdown files, source code comments, docstrings, and configuration metadata to identify stale, contradictory, missing, or dead information. Findings are reported with specific file and line numbers, followed by an option to generate targeted documentation fixes.
+`docpass` audits project documentation against the implementation, treating code as the ground truth. It checks Markdown files, comments, docstrings, and configuration metadata for stale, contradictory, redundant, missing, or dead information. Findings include file and line references; targeted fixes can be requested.
 
 Used occasionally to deal with documentation drift.
 
 ## [professor](professor/SKILL.md)
 
-`professor` conducts a rigorous, persona-driven evaluation of the codebase in the style of a grumpy, skeptical Ph.D. professor. The review progresses through a structured 15-step checklist evaluating correctness, simplicity, security, and usability. It concludes by assigning a letter grade and providing a prioritized, actionable list of recommendations categorized by severity.
+`professor` evaluates a project in the style of a grumpy, skeptical Ph.D. professor. Its structured review prioritizes correctness, elegance, and simplicity, while also examining security, usability, tests, and documentation. It concludes with a letter grade and actionable recommendations prioritized by severity.
 
 Used after major milestones for insightful, in-depth, and sometimes entertaining project reviews.
 
 ## [trust-but-verify](trust-but-verify/SKILL.md)
 
-`trust-but-verify` provides an independent verification of whether a recently proposed plan was correctly executed. It compares the plan's checklist against the actual file changes, git logs, and command outputs to classify tasks as completed, partial, or missing. It also highlights any out-of-scope modifications without modifying any files.
+`trust-but-verify` checks whether an implemented plan matches what was promised. It compares the plan against actual artifacts, version history, and action records to classify items as done, partial, missing, or unverified. It also highlights changes outside the plan. The audit is read-only and relies on evidence rather than the implementing agent's self-report.
 
 Used when you really need to know the agent did what you asked it to do.
 
