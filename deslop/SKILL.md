@@ -129,7 +129,7 @@ For each actionable finding, include:
 - The trigger or contradiction and its concrete consequence; distinguish observation from inference.
 - A specific recommendation, prerequisites or compatibility uncertainty, and the behavior or check that would validate the correction.
 
-Give full detail to the highest-priority findings; compress the rest while preserving evidence and a specific action. Aim for roughly 1,000 words unless the scope or number of material findings warrants more. Do not omit serious findings to meet a length target or manufacture findings to fill categories.
+Give full detail to the highest-priority findings; compress the rest while preserving evidence and a specific action. Keep the report compact: do not omit serious findings for brevity or manufacture findings to fill categories.
 
 Briefly list important unresolved questions and justified complexity that affects the recommendations. End with the first few actions in dependency order and the review's coverage and verification limits, including checks actually run. Do not imply exhaustive review or test execution from static inspection.
 
