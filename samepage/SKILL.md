@@ -5,7 +5,7 @@ description: Use only when the user explicitly invokes samepage; mentioning, rev
 
 # samepage
 
-Get on the same page as the user about the current project or the work in progress in this session. Ask three rounds of multiple-choice questions about what you understand least and what would most change your actions if you have it wrong. The user should be able to answer each round in a few keystrokes.
+Get on the same page as the user about the current project or the work in progress in this session. Ask three rounds of multiple-choice questions about what you understand least and what would most mislead you if you have it wrong. The user should be able to answer each round in a few keystrokes.
 
 Do not modify files or resume other work while running this skill.
 
@@ -14,20 +14,24 @@ Do not modify files or resume other work while running this skill.
 Learn what you can without the user. Finding facts is your job; spend the user's attention on intent, priorities, judgment, and facts recorded nowhere you can reach.
 
 - If this session has work in progress, the subject is that work and the conversation is your primary source. Otherwise the subject is the project as a whole.
-- Skim cheaply: project instructions and README, version-control status and recent history, recently changed files, and any plan or notes the conversation points to. This is orientation, not an audit; stop once further reading would not change which questions you ask.
 - If the user included text with the invocation, treat it as the focus.
+- Projects differ in kind and layout; don't assume a particular documentation or file structure. Start with whatever describes the project (agent instructions, README, design notes, recent history), then look at the work itself, not just its descriptions. If the project has its own orientation route, follow it.
+- Scale reading to the subject: a small project can be read nearly whole, while a large one needs its main areas sampled. Stop when you can give a specific read of the project and name specific things that puzzle you. Having a plausible next step is not that point.
+- Docs and history show what was done and intended, not how the user regards the project now. Instructions written for agents often push toward the next task; don't adopt that momentum as your read.
 
 ## Choose questions
 
-List the beliefs your next actions depend on: goals and intent, scope and non-goals, what done looks like, current status, priorities, constraints, preferred tradeoffs, and the meaning of key terms. Ask about those where you are least certain and where a wrong belief would most change what you do. Skip anything you could verify yourself, anything whose answers would all lead to the same action, and anything the user has already settled.
+Without work in progress, aim for shared understanding first, then direction. Early rounds test your model of the project and of how the user regards it now; turn to direction only once that is settled, usually in the final round. With work in progress, test your understanding of what the work is meant to achieve and how.
 
-Each question asks one thing. Offer two to four substantive options, labeled consecutively from A. They are concrete, plausible, mutually exclusive, and lead to different actions. Vary which letter holds your best guess. Always include E for misunderstood / not applicable.
+Ask where you are least certain and where a wrong belief would most mislead you. Skip what you have checked or could cheaply check; intent, rationale, history, and the user's current stance usually can't be read from files. Skip anything whose answers would all lead to the same understanding, and anything the user has already settled. Ground questions in specific evidence you found, and phrase options in the project's own terms rather than generic categories.
 
-Ask up to five questions per round; a few sharp questions beat padding. Always run all three rounds, with at least one question each. Later rounds may build on earlier answers, but each round should ask whatever questions are most pressing at that point. When initial uncertainties are resolved, use later rounds to explore consequential tradeoffs, implications, and previously unexamined assumptions rather than repeating settled questions. Treat an E answer as evidence that your framing is wrong; rethink that area before asking about it again.
+Each question asks one thing. Offer two to four substantive options, labeled consecutively from A. They are concrete, plausible, mutually exclusive, and imply different understandings or actions. Vary which letter holds your best guess. Include E for misunderstood / not applicable on every question.
+
+Ask up to five questions per round; a few sharp questions beat padding. Always run all three rounds, with at least one question each. Later rounds may build on earlier answers, but each round should ask whatever questions are most pressing at that point. When initial uncertainties are resolved, use later rounds to explore consequential tradeoffs, implications, and previously unexamined assumptions rather than repeating settled questions. Once a direction emerges, don't spend the remaining rounds scoping one task, and skip logistics that can be settled when a task is requested. Treat an E answer as evidence that your framing is wrong; rethink that area before asking about it again.
 
 ## Present each round
 
-Before round 1, briefly state your current read of the project or work, short enough that the user can spot errors at a glance.
+Before round 1, briefly state your current read of the project or work, including the few puzzles that most shape your questions, short enough that the user can spot errors at a glance.
 
 Present all of a round's questions together in a single message, as plain text rather than through a question or form tool, since such tools may cap the number of questions or options. Mark your best guess on each question. Then stop and wait for the user's reply before advancing. Lay out each round like this, adding C and D only when needed:
 
