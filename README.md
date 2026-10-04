@@ -42,7 +42,7 @@ Used after major milestones for insightful, in-depth, and sometimes entertaining
 
 ## [samepage](samepage/SKILL.md)
 
-`samepage` gets the agent on the same page as you about the current project or the work in progress. After orienting itself from the conversation and repository, it asks three rounds of up to five multiple-choice questions aimed at its highest-uncertainty, highest-leverage assumptions. Each round takes a compact reply such as `1A 2D 3C` or `ADC`, and the skill ends with a summary of the shared understanding.
+`samepage` gets the agent on the same page as you about the current project or the work in progress when explicitly invoked. After orienting itself from the conversation and repository, it always asks three rounds of one to five multiple-choice questions aimed at its highest-uncertainty, highest-leverage assumptions. Later rounds explore consequential tradeoffs, implications, and previously unexamined assumptions as initial uncertainties are resolved. Each question offers two to four substantive options plus E for misunderstood / not applicable. Each round takes a compact reply such as `1A 2B 3A` or `ABA`; `-` skips a positional answer, and omitted answers count as skipped. The skill ends with a summary distinguishing confirmed decisions from unresolved assumptions and skipped answers.
 
 Used at the start of a session, after a long or compacted session, or whenever the agent seems to be working from the wrong picture.
 
