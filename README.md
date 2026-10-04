@@ -40,6 +40,12 @@ Used occasionally to deal with documentation drift.
 
 Used after major milestones for insightful, in-depth, and sometimes entertaining project reviews.
 
+## [samepage](samepage/SKILL.md)
+
+`samepage` gets the agent on the same page as you about the current project or the work in progress. After orienting itself from the conversation and repository, it asks three rounds of up to five multiple-choice questions aimed at its highest-uncertainty, highest-leverage assumptions. Each round takes a compact reply such as `1A 2D 3C` or `ADC`, and the skill ends with a summary of the shared understanding.
+
+Used at the start of a session, after a long or compacted session, or whenever the agent seems to be working from the wrong picture.
+
 ## [trust-but-verify](trust-but-verify/SKILL.md)
 
 `trust-but-verify` checks whether an implemented plan matches what was promised. It compares the plan against actual artifacts, version history, and action records to classify items as done, partial, missing, or unverified. It also highlights changes outside the plan. The audit is read-only and relies on evidence rather than the implementing agent's self-report.
