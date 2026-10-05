@@ -21,7 +21,7 @@ Learn what you can without the user. Finding facts is your job; spend the user's
 
 ## Choose questions
 
-Without work in progress, aim for shared understanding first, then direction. Early rounds test your model of the project and of how the user regards it now; turn to direction only once that is settled, usually in the final round. With work in progress, test your understanding of what the work is meant to achieve and how.
+Without work in progress, aim for shared understanding first, then direction. Early rounds test your model of the project and of how the user regards it now; turn to direction only once that is settled, usually in the final round. With work in progress, test your understanding of what the work is meant to achieve and how, including choices you made in it without the user's input.
 
 Ask where you are least certain and where a wrong belief would most mislead you. Skip what you have checked or could cheaply check; intent, rationale, history, and the user's current stance usually can't be read from files. Skip anything whose answers would all lead to the same understanding, and anything the user has already settled. Ground questions in specific evidence you found, and phrase options in the project's own terms rather than generic categories.
 
