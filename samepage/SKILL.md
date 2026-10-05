@@ -13,7 +13,7 @@ Do not modify files or resume other work while running this skill.
 
 Learn what you can without the user. Finding facts is your job; spend the user's attention on intent, priorities, judgment, and facts recorded nowhere you can reach.
 
-- If this session has work in progress, the subject is that work and the conversation is your primary source. Otherwise the subject is the project as a whole.
+- If this session has work in progress, the subject is that work and the conversation is your primary source, but check how the work fits the project around it. Otherwise the subject is the project as a whole.
 - If the user included text with the invocation, treat it as the focus.
 - Projects differ in kind and layout; don't assume a particular documentation or file structure. Start with whatever describes the project (agent instructions, README, design notes, recent history), then look at the work itself, not just its descriptions. If the project has its own orientation route, follow it.
 - Scale reading to the subject: a small project can be read nearly whole, while a large one needs its main areas sampled. Stop when you can give a specific read of the project and name specific things that puzzle you. Having a plausible next step is not that point.
