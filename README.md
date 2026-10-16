@@ -1,6 +1,6 @@
 # Skills
 
-Agent skills for planning, reviewing, and verifying project work, using the portable `SKILL.md` format. Each skill lives in its own directory, ready to copy into a harness's skills location.
+Agent skills for planning, reviewing, fixing, and verifying project work, using the portable `SKILL.md` format. Each skill lives in its own directory, ready to copy into a harness's skills location.
 
 ## Using skills together
 
@@ -8,6 +8,7 @@ Use the skills individually or combine them as the work calls for it. For exampl
 
 - **Review, plan, verify:** Use `/professor` to review a project, then `/boilerplan` to plan fixes for the findings you want to address. After accepting and implementing the plan, use `/trust-but-verify` to check that everything landed.
 - **Check work as you go:** Use `/deslop` after a chunk of work or when taking over someone else's—or another agent's—codebase to find stale assumptions, unnecessary complexity, and weak verification.
+- **Fix until stable:** Use `/bughunter` when you want material bugs found and fixed rather than reviewed. Its record of settled findings and its checkpoint keep later runs from relitigating them, so repeated runs settle on "nothing worth fixing."
 - **Plan with review standards in mind:** Start with an idea and tell `/boilerplan`: “This work will eventually be evaluated by `/professor` or `/deslop`. Read those skills and account for their review standards in the plan.”
 
 These are examples, not a required sequence. The slash notation names the skills; invocation syntax depends on your harness.
@@ -21,6 +22,12 @@ This repository owns the skill definitions only. Harness-specific installation i
 `boilerplan` turns a described task into an implementation plan: keep docs and code comments current, ask clarifying questions as needed, and make a git commit the final implementation step. The agent presents the plan and waits for acceptance before implementing it.
 
 Used in place of restating the same planning boilerplate at the end of every request.
+
+## [bughunter](bughunter/SKILL.md)
+
+`bughunter` finds and fixes material bugs: wrong results, lost data, broken workflows, crashes, and similar failures in the project's supported use. It splits the code into units small enough to read completely and examines every unit on each pass. Each candidate must pass four questions: is it wrong, can it actually happen, does it matter, and can it be shown. The agent repeats passes until one finds nothing worth fixing, then says so and stops. A gitignored `.bughunter.md` file at the project root, kept out of the repo, records dismissed candidates, open decisions, and a checkpoint commit, so later runs examine only changed code and don't re-raise settled items.
+
+Used when repeated reviews keep turning up different issues and you want to reach a stable end state instead.
 
 ## [deslop](deslop/SKILL.md)
 
