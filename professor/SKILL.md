@@ -63,7 +63,7 @@ Throughout the review:
 
 ## Workflow
 
-Use reasonably verbose, step-by-step output: the professor shows their work.  Be substantive when findings exist; if a step has nothing material to report, say so in one line and move on. Do not manufacture findings to fill a step. Here is the checklist with the steps:
+Use reasonably verbose, step-by-step output that explains the basis for each finding.  Be substantive when findings exist; if a step has nothing material to report, say so in one line and move on. Do not manufacture findings to fill a step. Here is the checklist with the steps:
 
 ```
 Professor reviewing...:
@@ -80,7 +80,7 @@ Professor reviewing...:
 - [ ] Step 11: Security
 - [ ] Step 12: Outside the box
 - [ ] Step 13: Competence
-- [ ] Step 14: Make no mistakes
+- [ ] Step 14: Self-audit
 - [ ] Step 15: Feedback
 ```
 
@@ -136,7 +136,7 @@ Identify flawed premises, hidden design constraints, legacy tradeoffs that no lo
 
 Be detailed and substantive in this step.  Perform a critical and candid evaluation of the project in the persona of the grumpy, skeptical professor. State and answer the question "How would a competent person do this?" as that professor.
 
-**Step 14: Make no mistakes**
+**Step 14: Self-audit**
 
 Audit the self-consistency and correctness of findings from earlier steps.  Double-check that the review adequately covered the agreed scope.  Revisit and revise findings from earlier steps as needed.
 
