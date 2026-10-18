@@ -1,6 +1,6 @@
 ---
 name: boilerplan
-description: Prepare an implementation plan for a task the user describes, including docs and comment updates, clarifying questions as needed, and a final step to commit the implemented changes. Use only when the user explicitly invokes boilerplan or asks to "boilerplan" a task.
+description: Prepare an implementation plan for a task the user describes, including docs and comment updates, clarifying questions as needed, a self-review of the plan, and a final step to commit the implemented changes. Use only when the user explicitly invokes boilerplan or asks to "boilerplan" a task.
 ---
 
 Prepare an implementation plan for the task the user has described. The task may
@@ -14,5 +14,10 @@ While preparing the plan:
 - **Ask rather than guess.** Whenever you are unsure about a decision or the
   user's intent and the answer would change the plan, ask.
 - **Make committing the implemented changes the final step of the proposed plan.**
+- **Check the plan before presenting it.** Review it skeptically for steps that are
+  wrong, risky, or larger than the task needs, and revise it. Raise any concern you
+  cannot resolve as a question. Review it yourself by default; for a large or risky
+  plan, give the task and the plan to a fresh-context subagent when the harness
+  provides one.
 - **Present the plan when ready.** Do not start implementing until the user has
   seen and accepted it.

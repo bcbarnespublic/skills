@@ -15,11 +15,11 @@ These are examples, not a required sequence. The slash notation names the skills
 
 ## Compatibility
 
-This repository owns the skill definitions only. Harness-specific installation instructions and compatibility checks are owned by an external skill-installer project and are intentionally not duplicated here.
+This repository owns the skill definitions only. Harness-specific installation instructions and compatibility checks are owned by an external skill-installer project and are intentionally not duplicated here. The skills work from local evidence and reach outside resources, such as the web or third-party services, only for targeted checks in sessions that already do so.
 
 ## [boilerplan](boilerplan/SKILL.md)
 
-`boilerplan` turns a described task into an implementation plan: keep docs and code comments current, ask clarifying questions as needed, and make a git commit the final implementation step. The agent presents the plan and waits for acceptance before implementing it.
+`boilerplan` turns a described task into an implementation plan: keep docs and code comments current, ask clarifying questions as needed, check the plan for wrong, risky, or oversized steps, and make a git commit the final implementation step. The agent presents the plan and waits for acceptance before implementing it.
 
 Used in place of restating the same planning boilerplate at the end of every request.
 
@@ -31,19 +31,19 @@ Used when repeated reviews keep turning up different issues and you want to reac
 
 ## [deslop](deslop/SKILL.md)
 
-`deslop` reviews code and project material for stale assumptions, unnecessary complexity, duplicate concepts, and weak verification. It prioritizes recommendations backed by evidence and is read-only unless you request remediation.
+`deslop` reviews code and project material for stale assumptions, unnecessary complexity, duplicate concepts, and weak verification. That includes dead or speculative (YAGNI) code, duplicate helpers, abandoned or unmaintained dependencies, and code or dependencies that redo what the standard library or platform already provides. It prioritizes recommendations backed by evidence and is read-only unless you request remediation.
 
 Used after chunks of work or when taking over an unfamiliar codebase, regardless of who or what wrote it.
 
 ## [docpass](docpass/SKILL.md)
 
-`docpass` audits project documentation against the implementation, treating code as the ground truth. It checks Markdown files, comments, docstrings, and configuration metadata for stale, contradictory, redundant, missing, or dead information. Findings include file and line references; targeted fixes can be requested.
+`docpass` audits project documentation against the implementation, treating code as the ground truth. It checks Markdown files, comments, docstrings, and configuration metadata for stale, contradictory, redundant, missing, dead, or verbose information. Findings include file and line references; targeted fixes can be requested.
 
 Used occasionally to deal with documentation drift.
 
 ## [professor](professor/SKILL.md)
 
-`professor` evaluates a project in the style of a grumpy, skeptical Ph.D. professor. Its structured review prioritizes correctness, elegance, and simplicity, while also examining security, usability, tests, and documentation. It concludes with a letter grade and actionable recommendations prioritized by severity.
+`professor` evaluates a project in the style of a grumpy, skeptical Ph.D. professor. Its structured review prioritizes correctness, then elegance, simplicity, and speed, while also examining security, usability, tests, and documentation. It concludes with a letter grade and actionable recommendations prioritized by severity.
 
 Used after major milestones for insightful, in-depth, and sometimes entertaining project reviews.
 
