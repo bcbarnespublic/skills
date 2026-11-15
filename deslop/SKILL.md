@@ -91,7 +91,7 @@ A single implementation, one-use dependency, or unused-in-repo public entry poin
 
 Verify authoritative-sounding rationale, magic constants, defaults, and timezone or ordering choices against actual requirements and behavior. Missing rationale alone does not prove a decision wrong; explain the consequential ambiguity and what evidence would resolve it.
 
-Inspect session reports, temporary scripts, and repetitive logs for misleading claims or maintenance cost. Preserve useful historical records. Search cues such as `TODO`, `HACK`, “for now,” “legacy,” “just in case,” “placeholder,” `_old`, or `.bak` can guide inspection, but names and style alone never establish a finding.
+Inspect session reports, temporary scripts, repetitive logs, and other leftover work products for misleading claims or maintenance cost. Such material is trivial when no current consumer, build step, or maintainer need depends on it; the attention it takes in every search and read is cost enough for a Minor finding. Preserve useful historical records. Search cues such as `TODO`, `HACK`, “for now,” “legacy,” “just in case,” “placeholder,” `_old`, or `.bak` can guide inspection, but names and style alone never establish a finding.
 
 ### 8. Invalid or obsolete external references
 

@@ -31,7 +31,7 @@ Used when repeated reviews keep turning up different issues and you want to reac
 
 ## [deslop](deslop/SKILL.md)
 
-`deslop` reviews code and project material for stale assumptions, unnecessary complexity, duplicate concepts, and weak verification. That includes dead or speculative (YAGNI) code, duplicate helpers, abandoned or unmaintained dependencies, and code or dependencies that redo what the standard library or platform already provides. It prioritizes recommendations backed by evidence and is read-only unless you request remediation.
+`deslop` reviews code and project material for stale assumptions, unnecessary complexity, duplicate concepts, and weak verification. That includes dead or speculative (YAGNI) code, duplicate helpers, trivial leftover files, abandoned or unmaintained dependencies, and code or dependencies that redo what the standard library or platform already provides. It prioritizes recommendations backed by evidence and is read-only unless you request remediation.
 
 Used after chunks of work or when taking over an unfamiliar codebase, regardless of who or what wrote it.
 

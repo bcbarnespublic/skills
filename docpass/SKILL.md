@@ -18,7 +18,7 @@ For projects small enough to inspect in the current turn, read all docs and comm
 - **Agent instruction files**: `AGENTS.md`, `CLAUDE.md`, and similar, at any depth; each applies to its own directory, so account for that scope before declaring contradictions. Audit only their descriptive claims (paths, commands, architecture); the rules they set for agents are out of scope
 - **Inline comments and docstrings** inside source files
 - **Config metadata**: `description`/`summary` fields in `package.json`, `pyproject.toml`, `Cargo.toml`, `setup.py`, etc., plus substantive prose comments in config files (skip incidental one-liners)
-- **Out of scope**: old CHANGELOG entries (history, not stale), LICENSE/COPYING, CI-generated README badges, generated doc outputs (`docs/_build/`, `_site/`, `site/`, etc.)
+- **Out of scope**: old CHANGELOG entries (history, not stale), LICENSE/COPYING, CI-generated README badges, generated doc outputs (`docs/_build/`, `_site/`, `site/`, etc.), leftover work products that are not maintained documentation (session reports, scratch notes)
 
 ## The cardinal rule: code is truth
 
@@ -40,9 +40,9 @@ Look for these categories. For each finding, capture: the category, the location
 - **Contradictory** — two docs (or a doc and a docstring) make incompatible claims about the same thing.
 - **Internally inconsistent** — a single doc contradicts itself: synopsis lists three flags but examples use a fourth; types disagree between description and signature; an example uses a parameter the description never names.
 - **Missing** — a public-surface thing has no documentation where the project's own conventions would expect it. Undocumented public function in a module where everything else has a docstring; a CLI flag absent from the usage doc; a config key absent from the config reference. Use the project's own conventions as the bar, not an external ideal.
-- **Redundant** — the same explanation duplicated across files such that they will inevitably drift. Flag only load-bearing prose, not boilerplate (badges, license headers, generated tables of contents).
-- **Dead** — doc references something that no longer exists: removed features, broken links, deleted commands, completed TODOs, "coming soon" sections that never arrived.
-- **Verbose** — a doc, comment, or docstring restates what the code plainly shows, narrates past edits, or repeats itself. Flag only text whose removal costs the reader nothing.
+- **Redundant** — the same explanation duplicated across files such that they will inevitably drift. Flag only load-bearing prose, not boilerplate (badges, license headers, generated tables of contents). Name the copy to keep, the one where a reader would look first; the fix folds anything only the other copies say into it and replaces them with a pointer to it.
+- **Dead** — doc is obsolete because what it references no longer exists: removed features, broken links, deleted commands, completed TODOs, "coming soon" sections that never arrived.
+- **Verbose** — a doc, comment, or docstring restates what the code plainly shows, narrates past edits, repeats itself, or is trivial: accurate, but nothing in it would change what a reader does or understands. This applies at any size, from a single comment to a whole doc. Flag only text whose removal costs the reader nothing.
 
 If something feels wrong but doesn't fit, list it under **Other** with your reasoning — don't force-fit a category.
 
