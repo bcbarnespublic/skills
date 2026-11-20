@@ -7,7 +7,7 @@ description: Use only when the user explicitly invokes samepage; mentioning, rev
 
 Get on the same page as the user about the current project or the work in progress in this session. Ask three rounds of multiple-choice questions about what you understand least and what would most mislead you if you have it wrong. The user should be able to answer each round in a few keystrokes.
 
-Do not modify files or resume other work while running this skill.
+Do not modify files or resume other work while running this skill. Send only one round per turn; never combine rounds, invent user replies, or summarize in the same turn as round 3.
 
 ## Orient first
 
@@ -51,8 +51,8 @@ Accept any reasonable shape: `1A 2B`, `ABA-E`, lowercase, commas, or answers wit
 
 Keep skipped answers unresolved and distinguish them from confirmed decisions. A marked guess is never an agreed decision without the user's confirmation.
 
-After the user replies to rounds 1 and 2, briefly state what changed in your understanding, then present the next round.
+After the user replies to rounds 1 and 2, never in the same turn that presented the round, briefly state what changed in your understanding, then present the next round.
 
 ## Finish
 
-After the user replies to round 3, summarize the shared understanding concisely: the goal, current state, key decisions and constraints, and what the answers corrected in your earlier read. Distinguish confirmed decisions from remaining assumptions, and name any important uncertainty, including skipped answers, that remains. Then stop and wait for the user's next instruction.
+After the user replies to round 3, never in the same turn that presented round 3, summarize the shared understanding concisely: the goal, current state, key decisions and constraints, and what the answers corrected in your earlier read. Distinguish confirmed decisions from remaining assumptions, and name any important uncertainty, including skipped answers, that remains. Then stop and wait for the user's next instruction.
