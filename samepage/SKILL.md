@@ -33,7 +33,7 @@ Ask up to five questions per round; a few sharp questions beat padding. Always r
 
 Before round 1, briefly state your current read of the project or work, including the few puzzles that most shape your questions, short enough that the user can spot errors at a glance.
 
-Present all of a round's questions together in a single message, as plain text rather than through a question or form tool, since such tools may cap the number of questions or options. Mark your best guess on each question. Then stop and wait for the user's reply before advancing. Lay out each round like this, adding C and D only when needed:
+Present all of a round's questions together in a single message, as plain text rather than through a question or form tool, since such tools may cap the number of questions or options. Mark your best guess on each question. Then end your turn and wait for the user's reply before advancing. Lay out each round like this, adding C and D only when needed:
 
 ```
 Round 1 of 3. Reply like "1A 2B 3A" or "ABA"; add a note after any answer, or use - to skip.
@@ -51,8 +51,8 @@ Accept any reasonable shape: `1A 2B`, `ABA-E`, lowercase, commas, or answers wit
 
 Keep skipped answers unresolved and distinguish them from confirmed decisions. A marked guess is never an agreed decision without the user's confirmation.
 
-After rounds 1 and 2, briefly state what changed in your understanding, then present the next round.
+After the user replies to rounds 1 and 2, briefly state what changed in your understanding, then present the next round.
 
 ## Finish
 
-After round 3, summarize the shared understanding concisely: the goal, current state, key decisions and constraints, and what the answers corrected in your earlier read. Distinguish confirmed decisions from remaining assumptions, and name any important uncertainty, including skipped answers, that remains. Then stop and wait for the user's next instruction.
+After the user replies to round 3, summarize the shared understanding concisely: the goal, current state, key decisions and constraints, and what the answers corrected in your earlier read. Distinguish confirmed decisions from remaining assumptions, and name any important uncertainty, including skipped answers, that remains. Then stop and wait for the user's next instruction.
